@@ -16,21 +16,23 @@ public class SparkDriver {
         SparkConf conf = new SparkConf().setMaster("local").setAppName("Exercise 39 - Critical dates analysis");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaRDD<String> readFile = sc.textFile(inputPath);
+        JavaRDD<String> readings = sc.textFile(inputPath);
 
-        JavaRDD<String> readingsAboveThreshold = readFile
+        JavaRDD<String> readingsHighValue = readings
                 .filter(
                         p -> Double.parseDouble(p.split(",")[2]) > threshold
                 );
 
-        JavaPairRDD<String, Iterable<String>> sensorsCriticalDates = readingsAboveThreshold
+        JavaPairRDD<String, String> sensorsCriticalDates = readingsHighValue
                 .mapToPair(
                         p -> {
                             String[] fields = p.split(",");
                             return new Tuple2<>(fields[0], fields[1]);
                         }
                 )
-                .groupByKey();
+                .reduceByKey(
+                        (v1, v2) -> (v1 + ";" + v2)
+                );
 
         sensorsCriticalDates.saveAsTextFile(outputPath);
         sc.close();
