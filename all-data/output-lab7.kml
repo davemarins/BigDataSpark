@@ -1,0 +1,4 @@
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+<Placemark><name>2</name><ExtendedData><Data name="DayWeek"><value>Mon</value></Data><Data name="Hour"><value>0</value></Data><Data name="Criticality"><value>0.3018292682926829</value></Data></ExtendedData><Point><coordinates>2.176414,41.394381</coordinates></Point></Placemark>
+<Placemark><name>1</name><ExtendedData><Data name="DayWeek"><value>Mon</value></Data><Data name="Hour"><value>2</value></Data><Data name="Criticality"><value>0.5137614678899083</value></Data></ExtendedData><Point><coordinates>2.180019,41.397978</coordinates></Point></Placemark>
+</Document></kml>

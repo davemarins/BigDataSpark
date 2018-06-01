@@ -15,7 +15,7 @@ public class SparkDriver {
         String inputPath = args[0];
 
         SparkSession ss = SparkSession.builder()
-                .appName("Exercise 36 - SparkDataset")
+                .appName("Exercise 36 - SparkDatasetToDo")
                 .master("local")
                 .getOrCreate();
 

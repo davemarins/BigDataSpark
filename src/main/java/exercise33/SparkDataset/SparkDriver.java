@@ -14,7 +14,7 @@ public class SparkDriver {
         Integer K = Integer.parseInt(args[1]);
 
         SparkSession ss = SparkSession.builder()
-                .appName("Exercise 33 - SparkDataset")
+                .appName("Exercise 33 - SparkDatasetToDo")
                 .master("local")
                 .getOrCreate();
 

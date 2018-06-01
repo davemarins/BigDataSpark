@@ -11,7 +11,7 @@ public class SparkDriver {
         String inputPath = args[0];
         String outputPath = args[1];
 
-        SparkConf conf = new SparkConf().setMaster("local").setAppName("Exercise 34 - Readings associated to max value");
+        SparkConf conf = new SparkConf().setMaster("local").setAppName("Exercise 34 - Reading associated to max value");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> readFile = sc.textFile(inputPath);
 
